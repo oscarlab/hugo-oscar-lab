@@ -24,15 +24,14 @@ div.logo-pic {
   margin-right: auto;
   margin-left: auto;
   font-size: 50px;
+  padding-bottom: 5px;
 }
 @media only screen and (max-width:850px){
   div.logo-pic .pic { display: none; }
   div.logo-pic:after{
         content: attr(data-alt);
-        align-content: center
+        align-content: center;
     }
-  div.logo-pic:data-alt {}
-
 }
 
 .pic { max-width: 500px; margin-right: auto; margin-left: auto; padding-bottom: 30px; }
@@ -55,10 +54,11 @@ li span{ position }
   list-style: none;
   text-align: center;
   padding: 0;
-  margin: 0;
+  margin: auto;
 }
 .nav li{
     padding: 10px;
+    margin: auto;
 }
 .navbar a:hover {border:none;}
 .navbar li sup {color: #FF0084}
