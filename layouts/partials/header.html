@@ -1,0 +1,54 @@
+{{ $baseUrl := .Site.BaseURL }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ define "title"}} {{ .Site.Title}} {{end}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ $baseUrl }}/css/site.css">
+</head>
+
+<body role="document">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <a class="navbar-brand" href="{{ $baseUrl }}/">{{ .Site.Title }}</a>
+            </div>
+            <!-- <div id="navbar" class="navbar-collapse collapse"> -->
+            <div id="navbar" class="navbar-inner" >
+                <ul class="nav">
+                <!-- <ul class="nav navbar-nav"> -->
+                    <li {{ if .IsHome }}class="active"{{ end }}><a href="{{ $baseUrl }}/">Home</a></li>
+            {{ $url := .URL }}
+            {{ with .Site.Menus.main }}
+                {{ range $menu := . }}
+                    <li {{ if eq $url .URL }}class="active"{{ end }}><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            {{ end }}
+                </ul>
+                {{ with .Site.Params.searchDomain }}
+                <form class="navbar-form navbar-left" role="search" action="https://www.google.com/search" method="get">
+                    <div class="input-group doc-search-form">
+                        <input type="hidden" name="as_sitesearch" value="{{ . }}">
+                        <input type="text" name="as_q" class="search-query doc-search-input-text" placeholder="Search Site">
+                        <span class="input-group-addon input-group-btn doc-search-input-btn">
+                            <button class="btn" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </form>
+                {{ end }}
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+<div class="container">
