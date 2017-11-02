@@ -1,6 +1,19 @@
-<!DOCTYPE html> 
-<html> 
-<body> 
-  <p>hugo says hello!</p> 
-</body> 
-</html>
+{{ $baseUrl := .Site.BaseURL }}
+{{ partial "header.html" . }}
+
+<div class="jumbotron" style="text-align: center;">
+<h6>
+The OSCAR Lab is an inter-disciplinary computer-systems research group. We explore opportunities in the entire computing stack including, but not limited to:<br /> Operating Systems, Virtualization, System Security, Concurrency, Compilers, and Computer Architecture.
+</h6>
+</div>
+<hr />
+<h3> News </h3>
+<div class="content_list">
+	<h6> </h6>
+	<div class="news">
+		<div class="title"></div>
+		<div class="date">Posted: </div>
+		<div class="desc"></div>
+	</div>
+</div>
+{{ partial "footer.html" . }}
