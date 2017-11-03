@@ -1,0 +1,33 @@
+{{ $baseUrl := .Site.BaseURL }}
+{{ partial "header.html" . }}
+
+<!-- <h1>People</h1> -->
+<div >
+{{range .Data.Pages.GroupByParam "status" }}
+<div class="row">
+	{{range .Pages.GroupByParam "role"}}
+	{{ partial "roles.html" . }}
+	<ul class="people" style="list-style: none;">
+	{{range .Pages }}
+		{{if (isset .Params "name") | and (not (eq .Params.name ""))}}
+		<li style="float: left; display: inline; padding: 20px;">
+			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
+			<a href="{{.Params.website}}">
+			{{ end }}
+			{{if (isset .Params "img")}}
+			<img class="rounded-circle profile" id="profile-pic" style="height: 130px; width: 130px; padding-bottom: 10px;" src={{ printf "/images/people/%s" .Params.img}}>
+			{{end}}
+			<h6 style="text-align: center; vertical-align: middle;">{{.Params.name}}</h6>
+			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
+			</a>
+			{{ end }}
+		</li>
+		{{ end }}
+	{{ end }}
+	</ul>
+	</div>
+	{{ end }}
+</div>
+{{ end }}
+</div>
+{{ partial "footer.html" . }}
