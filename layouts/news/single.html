@@ -1,14 +1,16 @@
 {{ $baseUrl := .Site.BaseURL }}
 {{ partial "header.html" . }}
-<section id="wrapper">
-	<article class="post">
+<div id="wrapper" >
+	<div class="post">
 		<header>
+			<center>
 			<h2>{{ .Params.short_desc }}</h2>
-			{{ .Date.Format "Jan 2, 2006" }}
+			</center>
 		</header>
-		<section id="post-body">
+		<div id="post-body" style="width: 70%; margin:auto;">
+			<div class="post-time">{{ .Date.Format "Jan 2, 2006" }}</div>
 			{{ .Content }}
-		</section>
-	</article>
-</section>
+		</div>
+	</div>
+</div>
 {{ partial "footer.html" . }}
