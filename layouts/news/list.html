@@ -1,11 +1,16 @@
 {{ $baseUrl := .Site.BaseURL }}
 {{ partial "header.html" . }}
+<div class="news">
 <h1>{{ .Title }}</h1>
-<div class="archive">
-{{ range .Data.Pages.GroupByDate "2006-01"}}
+{{ range .Data.Pages.GroupByDate "2006-01-28"}}
 	<ul>
 	{{ range .Pages }}
 		<div class="post-item">
+		{{ if isset .Params "icon"}}
+		<div class="icon"><i class="fa fa-{{.Params.icon}}"></i></div>
+		{{ else }}
+		<div class="icon"><i class="fa fa-file-text-o"></i></div>
+		{{ end }}
 		<a href="{{ .Permalink }}" class="post-link">
 		{{ .Params.short_desc }}
 		</a>

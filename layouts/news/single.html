@@ -3,12 +3,8 @@
 <section id="wrapper">
 	<article class="post">
 		<header>
-			<h1>{{ .Title }}</h1>
-			<h2 class="headline">
+			<h2>{{ .Params.short_desc }}</h2>
 			{{ .Date.Format "Jan 2, 2006" }}
-			· {{ if lt 1 .WordCount }}{{ .WordCount }} words{{ else }}{{ .WordCount }} word{{ end }}
-			· {{ if eq 1 .ReadingTime }}{{ .ReadingTime }} minute read{{ else }}{{ .ReadingTime }} minutes read{{ end }}
-			</h2>
 		</header>
 		<section id="post-body">
 			{{ .Content }}
