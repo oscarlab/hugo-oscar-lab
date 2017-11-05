@@ -61,6 +61,11 @@ li span{ position }
     padding: 10px;
     margin: auto;
 }
+
+#navbar ul li.active>a{
+  font-weight: bold;
+ }
+
 .navbar a:hover {border:none;}
 .navbar li sup {color: #FF0084}
 li sup {font-size: smaller;}
@@ -69,8 +74,9 @@ div.doc-footer {
   margin-right: auto;
   margin-left: auto;
   max-width: max-content;
-  font-size: 10pt;
+  font-size: 9pt;
   text-align:center;
+  color: #8a8a8a;
 }
 
 ul.people {
@@ -133,6 +139,7 @@ ul.people li {
 .post-time {
     display: inline-block;
     width: 100px;
+    font-size: 10pt;
     margin: 0;
     color: #8a8a8a;
 }
@@ -147,7 +154,11 @@ ul.people li {
 }
 
 .news {
-  width: max-content;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.jumbotron {
+  color: #8a8a8a;
 }

@@ -1,0 +1,24 @@
+{{ $baseUrl := .Site.BaseURL }}
+{{ partial "header.html" . }}
+<div class="news">
+<!-- <h2>{{ .Title }}</h2> -->
+<center>Our work would not be possible without the generous support of our sponsors. We gratefully acknowledge their support.</center>
+<br>
+{{ range .Data.Pages.GroupByDate "2016-05-28T00:00:00Z"}}
+	<ul style="list-style: none;">
+	{{ range .Pages }}
+		<li>
+		<a href="{{ .Params.sp_website }}" class="post-link">
+		{{ .Params.short_desc }}
+		</a>
+		<div class="post-time">{{ .Date.Format "Jan 2, 2006" }}</div>
+		</li>
+	{{ end }}
+	</ul>
+{{ end }}
+</div>
+{{ partial "sponsors.html" .}}
+
+{{ partial "footer.html" . }}
+
+<!-- You can add some text here using markdown or pure HTML (any markdown inside a html tag will not be parsed, however.) The markdown parser used is called blackfriday. -->

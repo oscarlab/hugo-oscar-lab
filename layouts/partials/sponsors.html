@@ -1,0 +1,8 @@
+{{ $baseUrl := .Site.BaseURL }}
+<div class="row" style="max-width: 98%; margin: auto; text-align: center;">
+<div class="col-md-12">
+{{ range readDir "/static/images/sponsors/"}}
+		<img src="/images/sponsors/{{.Name}}" style="max-width: 160px; float: center; padding:10px;">
+{{ end }}
+</div>
+</div>
