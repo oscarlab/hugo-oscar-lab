@@ -162,3 +162,9 @@ ul.people li {
 .jumbotron {
   color: #8a8a8a;
 }
+
+div.sponsor {float: center; display: inline;}
+
+div.sponsor img {overflow:hidden;}
+div.sponsor img.landscape {max-width:200px; width:100%; height:auto;}
+div.sponsor img.portrait {max-height:100px; width:auto; height:100%;}

@@ -2,7 +2,12 @@
 <div class="row" style="max-width: 98%; margin: auto; text-align: center;">
 <div class="col-md-12">
 {{ range readDir "/static/images/sponsors/"}}
-		<img src="/images/sponsors/{{.Name}}" style="max-width: 160px; float: center; padding:10px;">
+	<div class="sponsor">
+	<img src="/images/sponsors/{{.Name}}" style="padding: 10px;">
+	</div>
 {{ end }}
+</div>
+<div class="doc-footer">
+Disclaimer: Any opinions, findings, and conclusions or recommendations expressed in this material are ours alone, and do not necessarily reflect the views of our sponsors.
 </div>
 </div>
