@@ -7,15 +7,3 @@
     <!-- Highlight JS CDN -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-
-    <script type="text/javascript">
-	$(window).on('load',function(){
-		$('div.sponsor img').each(function(){ //you need to put this inside the window.onload-function (not document.ready), otherwise the image dimensions won't be available yet
-		    if ($(this).width()/$(this).height() >= 1.6) {
-		        $(this).addClass('landscape');
-		    } else {
-		        $(this).addClass('portrait');
-		    }
-		});
-	});
-	</script>
