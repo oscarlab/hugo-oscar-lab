@@ -4,22 +4,29 @@
 <!-- <h1>People</h1> -->
 <div>
 {{range .Data.Pages.GroupByParam "status" }}
-<div class="row">
+<div class="row" style="max-width: 95%; margin: auto;">
 	{{range .Pages.GroupByParam "role"}}
 	{{ partial "roles.html" . }}
 	<ul class="people" style="list-style: none;">
 	{{range .Pages }}
 		{{if (isset .Params "name") | and (not (eq .Params.name ""))}}
-		<li style="float: left; display: inline; padding: 20px;">
+		<li style="float: left; display: inline; padding: 8px; text-align: center; width: 170px; min-height: 214px;">
 			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
 			<a href="{{.Params.website}}">
 			{{ end }}
 			{{if (isset .Params "img")}}
-			<img class="profile" id="profile-pic" style=" height: 130px; width: 130px; padding-bottom: 10px; object-fit: cover; border-radius: 50%;" src={{ printf "/images/people/%s" .Params.img}}>
+			<img class="profile" id="profile-pic" style=" height: 140px; width: 140px; padding-bottom: 10px; object-fit: cover; border-radius: 50%;" src={{ printf "/images/people/%s" .Params.img}}>
 			{{end}}
 			<h6 style="text-align: center; vertical-align: middle;">{{.Params.name}}</h6>
 			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
 			</a>
+			{{ end }}
+			<div style="font-size: 9pt;text-align:center; color: #8a8a8a; margin-top: -12px;">
+			{{ if (isset .Params "first_job") | and (not (eq .Params.first_job "")) }}
+			First Job: {{ .Params.first_job }}</div>
+			{{ end }}
+			{{ if (isset .Params "current_job") | and (not (eq .Params.current_job "")) }}
+			Current Job : {{.Params.current_job}}
 			{{ end }}
 		</li>
 		{{ end }}
