@@ -1,13 +1,11 @@
 +++
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
-class = ["people"]
+class = "people"
 draft = false
 name = "Full Name"
-weight = 20XX_year_started_in_program
 img = "just-the-name-in-static-people.jpg"
-status = "1_phd/2_pre_phd/3_grad_alum"
-role = "faculty/grad_phd_alum/grad_phd_current/2ms"
+role = "1_facult/2_phd/3_phd_alum/4_ms_alum"
 office = "Office Number"
 email = "email@university.edu"
 website = "https://externalwebsite.com"
