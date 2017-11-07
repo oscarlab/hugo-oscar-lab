@@ -1,42 +1,42 @@
 body {
-  display: block;
-  font-family: Helvetica, Sans-Serif;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 24px;
-  background-color: #eee;
+	display: block;
+	font-family: Helvetica, Sans-Serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 24px;
+	background-color: #eee;
 }
 /*div {
-  max-width: max-content;
-  margin-left: auto;
-  margin-right: auto;
+	max-width: max-content;
+	margin-left: auto;
+	margin-right: auto;
 }*/
 .container {
-  max-width: 1000px;
-  min-width: 400px;
-  min-height: max-content;
-  background-color: #fff;
-  padding: 25px 50px;
-  margin: 20px auto;
-  border-radius:10px;
+	max-width: 1000px;
+	min-width: 400px;
+	min-height: max-content;
+	background-color: #fff;
+	padding: 25px 50px;
+	margin: 20px auto;
+	border-radius:10px;
 }
 div.logo-pic {
-  max-width: max-content;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 50px;
-  padding-bottom: 5px;
+	max-width: max-content;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 50px;
+	padding-bottom: 5px;
 }
 @media only screen and (max-width:850px){
-  div.logo-pic .pic { display: none; }
-  div.logo-pic:after{
-        content: attr(data-alt);
-        align-content: center;
-    }
+	div.logo-pic .pic { display: none; }
+	div.logo-pic:after{
+				content: attr(data-alt);
+				align-content: center;
+		}
 }
 
 .pic { max-width: 500px; margin-right: auto; margin-left: auto; padding-bottom: 30px; }
-h3 {font-size: 18px; color: #36393D}
+h3 {font-size: 25px; color: #36393D}
 p { text-align: justify;}
 a { color: #4096EE; text-decoration: none; border-bottom: 0px; }
 a:hover { border-bottom: 1px dotted #3086DE; }
@@ -46,24 +46,24 @@ a:hover { border-bottom: 1px dotted #3086DE; }
 li span{ position }
 .row-fluid {border-bottom: 1px solid black;}
 .span9 {
-    padding-top: 15px;
-    padding-bottom: 10px;
+		padding-top: 15px;
+		padding-bottom: 10px;
 }
 .row-fluid2 {border-bottom: 1px solid gray;}
 #navbar {min-width:min-content; max-width: max-content; margin-right: auto; margin-left: auto;}
 .nav ul  {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  margin: auto;
+	list-style: none;
+	text-align: center;
+	padding: 0;
+	margin: auto;
 }
 .nav li{
-    padding: 10px;
-    margin: auto;
+		padding: 10px;
+		margin: auto;
 }
 
 #navbar ul li.active>a{
-  font-weight: bold;
+	font-weight: bold;
  }
 
 .navbar a:hover {border:none;}
@@ -71,96 +71,93 @@ li span{ position }
 li sup {font-size: smaller;}
 
 div.doc-footer {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: max-content;
-  font-size: 9pt;
-  text-align:center;
-  color: #8a8a8a;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: max-content;
+	font-size: 9pt;
+	text-align:center;
+	color: #8a8a8a;
 }
 
 ul.people {
-  list-style-type: none;
-  list-style: none;
-  padding-left: 0em;
-  width: 100%;
+	list-style-type: none;
+	list-style: none;
+	padding-left: 0em;
+	width: 100%;
 
-  $profile-size: 100px;
+	$profile-size: 100px;
 
-  .profile {
-    width: 100px;
-    height: 100px;
-  }
+	.profile {
+		width: 100px;
+		height: 100px;
+	}
 }
 
 ul.people li {
-  height: auto;
-  display: table;
-  margin: 0rem;
-  padding-top: 10px;
-  padding-bottom: 10px;
+	height: auto;
+	display: table;
+	margin: 0rem;
+	padding-top: 10px;
+	padding-bottom: 10px;
 
-  .profile {
-    text-align: center;
-    display: table-cell;
-    margin: .5rem;
-    vertical-align: middle;
-  }
+	.profile {
+		text-align: center;
+		display: table-cell;
+		margin: .5rem;
+		vertical-align: middle;
+	}
 
-  .person {
-    display: table-cell;
-    vertical-align: middle;
-    width: auto;
-  }
+	.person {
+		display: table-cell;
+		vertical-align: middle;
+		width: auto;
+	}
 
-  // draw empty gray circle for those without a profile pic
-  .noprofile {
-    fill: #f5f5f5;
-    r: $profile-size / 2;
-    cx: $profile-size / 2;
-    cy: $profile-size / 2;
-  }
+	// draw empty gray circle for those without a profile pic
+	.noprofile {
+		fill: #f5f5f5;
+		r: $profile-size / 2;
+		cx: $profile-size / 2;
+		cy: $profile-size / 2;
+	}
 }
-
-/*#profile-pic{
-  -webkit-filter: grayscale(100%);
-  -webkit-filter: grayscale(1);
-  filter: grayscale(100%);
-
-  filter: url('/images/gray.svg#grayscale');
-  filter: gray;
-}
-
-#profile-pic:hover {
-  -webkit-filter: none;
-  filter: none;
-}*/
 
 .post-time {
-    display: inline-block;
-    width: 100px;
-    font-size: 10pt;
-    margin: 0;
-    color: #8a8a8a;
+	display: inline-block;
+	width: 100px;
+	font-size: 10pt;
+	margin: 0;
+	color: #8a8a8a;
 }
 
 .icon {
-  float: left;
-  color: #bbb;
-  font-size: 2em;
-  padding: 0rem 1rem;
-  width: 4rem;
-  text-align: center;
+	float: left;
+	color: #bbb;
+	font-size: 2em;
+	padding: 0rem 1rem;
+	width: 4rem;
+	text-align: center;
 }
 
 .news {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .jumbotron {
-  color: #8a8a8a;
+	color: #8a8a8a;
 }
 
-div.sponsor {float: center; display: inline;}
+div.sponsor {
+	float: center;
+	display: inline;
+}
+
+
+.card.link:hover {
+	border: solid 1px #CCC;
+	-moz-box-shadow: 2px 2px 3px #999;
+	-webkit-box-shadow: 2px 2px 3px #999;
+	box-shadow: 2px 2px 3px #999;
+}

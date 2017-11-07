@@ -1,0 +1,24 @@
+<!--
+status = "current/completed"
+name = "Project name"
+short_desc = "one or two line description"
+people = ["names", "of", "project", "members"]
+url = "insert external website here otherwise leave blank"
+image = "name of project logo in /static/images/projects/"
+-->
+{{ $baseUrl := .Site.BaseURL }}
+{{ partial "header.html" . }}
+<div id="wrapper" >
+	<div class="post">
+		<header>
+			<center>
+			<h2>{{ .Params.name }}</h2>
+			</center>
+		</header>
+		<div id="post-body" style="width: 70%; margin:auto;">
+			<div style="font-size: 10pt; margin: 0; color: #8a8a8a;">{{ .Params.short_desc }}</div>
+			{{ .Content }}
+		</div>
+	</div>
+</div>
+{{ partial "footer.html" . }}

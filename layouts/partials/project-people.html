@@ -1,0 +1,26 @@
+{{ $baseUrl := .Site.BaseURL }}
+<ul  class="project-people" style="display: inline; list-style-type: none;padding-left: 0em;">
+{{$site := .Site}}
+{{ range $person := .Params.people}}
+	<li style="display: inline;">
+	{{ $found := "false"}}
+	{{ range $page := where $site.Pages "Type" "people" }}
+		{{ if (eq $person $page.Params.name) }}
+			{{$found := "true"}}
+			{{ if (isset $page.Params "website") | and (not (eq $page.Params.website "")) }}
+		<a class="person" href="{{$page.Params.website}}" style=" font-weight: normal; color: $dark-gray; position: relative; text-align: center;vertical-align: top; display: inline-block; width: 2.2rem; height: 2.2rem;">
+			{{ end }}
+			{{ if (isset $page.Params "img") }}
+			<img src={{ printf "/images/people/%s" $page.Params.img}} style="width: inherit; height: inherit; object-fit: cover; border-radius: 50%;">
+			{{ else }}
+				{{ $person }}
+			{{end}}
+			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
+		</a>
+			{{ end }}
+		{{ end }}
+	{{ end }}
+
+	</li>
+{{ end }}
+</ul>
