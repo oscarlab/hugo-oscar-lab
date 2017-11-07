@@ -2,12 +2,15 @@
 <div class="row" style="max-width: 98%; margin: auto; text-align: center;">
 <div class="col-md-12">
 {{ range readDir "/static/images/sponsors/"}}
+	{{ if not (in ( slice "unc_seal.png" "nih_seal.png" "sbu.png") .Name )}}
 	<div class="sponsor">
 	<img src="/images/sponsors/{{.Name}}" style="padding: 10px; max-width:200px; max-height: 100px;">
 	</div>
+	{{ end }}
 {{ end }}
 </div>
 <div class="doc-footer">
 Disclaimer: Any opinions, findings, and conclusions or recommendations expressed in this material are ours alone, and do not necessarily reflect the views of our sponsors.
+All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
 </div>
 </div>
