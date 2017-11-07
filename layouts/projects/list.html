@@ -18,7 +18,7 @@ image = "name of project logo in /static/images/projects/"
 </div>
 <div class="card-block" style="max-width: 95%; margin: auto auto 20px auto;">
 	{{ range .Pages }}
-	<div class="card link" style="display: inline-block; max-width: 275px; margin-bottom: 10px;">
+	<div class="card link" style="display: inline-block; max-width: 275px; margin-bottom: 10px; vertical-align: top;">
 		{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
 		<a href="{{ .Params.website }}" style="color: black; text-decoration: none;">
 		{{ else }}
