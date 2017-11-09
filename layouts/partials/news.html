@@ -1,22 +1,22 @@
 {{ $baseUrl := .Site.BaseURL }}
 <div class="archive">
 {{ range first .Site.Params.numNewsItems ((where .Site.Pages "Type" "news").GroupByDate "2006-01-28")}}
-	<ul>
-	{{ range .Pages}}
+	<!-- <div> -->
+	<!-- {{ range .Pages}} -->
 		{{ if (isset .Params "short_desc") | and (not (eq .Params.short_desc "")) }}
 		<div class="post-item">
-		{{ if isset .Params "icon"}}
+			{{ if isset .Params "icon"}}
 		<div class="icon"><i class="fa fa-{{.Params.icon}}"></i></div>
-		{{ else }}
+			{{ else }}
 		<div class="icon"><i class="fa fa-file-text-o"></i></div>
-		{{ end }}
+			{{ end }}
 		<a href="{{ .Permalink }}" class="post-link">
 		{{ .Params.short_desc }}
 		</a>
 		<div class="post-time">{{ .Date.Format "Jan 2, 2006" }}</div>
 		</div>
-	{{ end }}
-	{{ end }}
-	</ul>
+		{{ end }}
+	<!-- {{ end }} -->
+	<!-- </div> -->
 {{ end }}
 </div>

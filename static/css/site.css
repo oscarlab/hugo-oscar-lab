@@ -147,6 +147,23 @@ ul.people li {
 	margin-right: auto;
 }
 
+.archive {
+	display: grid;
+}
+
+@media only screen and (max-width: 600px){
+	.news {
+		width: 100%;
+	}
+	.news div.post-item {
+		padding-left: 0;
+	}
+}
+
+.post-item {
+	margin-bottom: 10pt;
+}
+
 .jumbotron {
 	color: #8a8a8a;
 }
