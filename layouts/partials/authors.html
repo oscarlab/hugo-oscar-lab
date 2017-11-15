@@ -1,0 +1,22 @@
+{{ $baseUrl := .Site.BaseURL }}
+{{$site := .Site}}
+{{ range $person := .Params.authors}}
+	<div style="display: inline;">
+	{{ $.Scratch.Set "found" "false"}}
+	{{ range $page := where $site.Pages "Type" "people" }}
+		{{ if (eq $person $page.Params.name) }}
+			{{ $.Scratch.Set "found" "true"}}
+			{{ if (isset $page.Params "website") | and (not (eq $page.Params.website "")) }}
+		<a href="{{$page.Params.website}}" style=" font-weight: normal; color: $dark-gray; position: relative; text-align: center;vertical-align: top;">
+			{{ end }}
+			{{ $person }},
+			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
+		</a>
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	{{ if (eq ($.Scratch.Get "found") "false") }}
+		{{ $person }},
+	{{ end }}
+	</div>
+{{ end }}
