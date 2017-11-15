@@ -15,13 +15,13 @@
 	</div>
 	<div class="file">
 		{{ if (isset .Params "conf_link") | and (not (eq .Params.conf_link "")) }}
-		<a href="{{.Params.conf_link}}"><i class="fa fa-home"></i></a>
+		<a href="{{.Params.conf_link}}"><i class="fa fa-globe"></i></a>
 		{{ end }}
 		{{ if (isset .Params "file") | and (not (eq .Params.file "")) }}
 		<a href="/papers/{{ .Params.file }}"><i class="fa fa-file-pdf-o"></i></a>
 		{{ end }}
 		{{ if (isset .Params "auth_link") | and (not (eq .Params.auth_link "")) }}
-		<a href="{{ .Params.auth_link }}"><i class="fa fa-globe"></i></a>
+		<a href="{{ .Params.auth_link }}"><i class="ai ai-acm"></i></a>
 		{{ end }}
 	</div>
 	{{ end }}
