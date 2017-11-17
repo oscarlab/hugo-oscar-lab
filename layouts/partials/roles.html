@@ -1,16 +1,16 @@
 <div>
 {{if (eq .Key "1_faculty")}}
 	<h3>Faculty</h3>
-{{else if (eq .Key "2_phd")}}
+{{else if (eq .Key "2_phd_student")}}
 	<h3>Ph.D. Students</h3>
-{{else if (eq .Key "3_phd_alum")}}
-	<h3>Ph.D. Alumni</h3>
-{{else if (eq .Key "4_ms_student")}}
+{{else if (eq .Key "3_ms_student")}}
 	<h3>M.S. Students</h3>
-{{else if (eq .Key "5_ms_alum")}}
-	<h3>M.S. Alumni</h3>
-{{else if (eq .Key "6_undergrad_student")}}
+{{else if (eq .Key "4_undergrad_student")}}
 	<h3>Undergraduate Students</h3>
+{{else if (eq .Key "5_phd_alum")}}
+	<h3>Ph.D. Alumni</h3>
+{{else if (eq .Key "6_ms_alum")}}
+	<h3>M.S. Alumni</h3>
 {{else if (eq .Key "7_undergrad_alum")}}
 	<h3>Undergraduate Alumni</h3>
 {{end}}
