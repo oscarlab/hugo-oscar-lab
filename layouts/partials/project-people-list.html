@@ -8,19 +8,16 @@
 		{{ if (eq $person $page.Params.name) }}
 			{{$found := "true"}}
 			{{ if (isset $page.Params "website") | and (not (eq $page.Params.website "")) }}
-		<a class="person" href="{{$page.Params.website}}" style=" font-weight: normal; color: $dark-gray; position: relative; text-align: center;vertical-align: top; display: inline-block; width: 2.2rem; height: 2.2rem;">
+		<a class="person" href="{{$page.Params.website}}" style=" font-weight: normal; color: $dark-gray; position: relative; text-align: center;vertical-align: top; display: inline-block;">
 			{{ end }}
-			{{ if (isset $page.Params "img") }}
-			<img src={{ printf "/images/people/%s" $page.Params.img}} style="width: inherit; height: inherit; object-fit: cover; border-radius: 50%;">
-			{{ else }}
-				{{ $person }}
+			{{ if (isset $page.Params "img") | and (not (eq $page.Params.img "")) }}
+			<img src={{ printf "/images/people/%s" $page.Params.img}} style="width: 2.2rem; height: 2.2rem; object-fit: cover; border-radius: 50%;">
 			{{end}}
-			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
+			{{ if (isset $page.Params "website") | and (not (eq $page.Params.website "")) }}
 		</a>
 			{{ end }}
 		{{ end }}
 	{{ end }}
-
 	</li>
 {{ end }}
 </ul>

@@ -12,12 +12,17 @@ image = "name of project logo in /static/images/projects/"
 	<div class="post">
 		<header>
 			<center>
+			{{ if eq .Content "" }}
 			<h2>{{ .Params.name }}</h2>
+			{{ end }}
 			</center>
 		</header>
-		<div id="post-body" style="width: 70%; margin:auto;">
-			<div style="font-size: 10pt; margin: 0; color: #8a8a8a;">{{ .Params.short_desc }}</div>
+		<div id="post-body" style="width: 80%; margin:auto;">
 			{{ .Content }}
+			<h5> People </h5>
+			{{ partial "project-people-single.html" . }}
+			{{ partial "project-publications.html" . }}
+			{{ partial "project-sponsors.html" . }}
 		</div>
 	</div>
 </div>

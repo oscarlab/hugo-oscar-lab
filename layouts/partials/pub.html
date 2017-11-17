@@ -1,0 +1,19 @@
+<div class="pub">
+	<div style="padding-bottom: 10px; vertical-align: middle;">
+		<b>{{ .Params.title | markdownify }}</b>
+		<br>
+		{{ partial "authors.html" . }}
+		{{ .Params.rest_of_bib }}
+	</div>
+</div>
+<div class="file">
+	{{ if (isset .Params "conf_link") | and (not (eq .Params.conf_link "")) }}
+	<a href="{{.Params.conf_link}}"><i class="fa fa-globe"></i></a>
+	{{ end }}
+	{{ if (isset .Params "file") | and (not (eq .Params.file "")) }}
+	<a href="/papers/{{ .Params.file }}"><i class="fa fa-file-pdf-o"></i></a>
+	{{ end }}
+	{{ if (isset .Params "auth_link") | and (not (eq .Params.auth_link "")) }}
+	<a href="{{ .Params.auth_link }}"><i class="ai ai-acm"></i></a>
+	{{ end }}
+</div>

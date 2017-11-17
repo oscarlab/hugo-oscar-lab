@@ -1,23 +1,14 @@
 {{ $baseUrl := .Site.BaseURL }}
 {{ partial "header.html" . }}
 <div class="news">
-<!-- <h2>{{ .Title }}</h2> -->
 <center>Our work would not be possible without the generous support of our sponsors. We gratefully acknowledge their support.</center>
 <br>
 {{ range .Data.Pages.GroupByDate "2016-05-28T00:00:00Z"}}
-	<!-- <ul style="list-style: none;"> -->
 	{{ range .Pages }}
-		<div style="padding-bottom: 10px; vertical-align: middle;">
-		<a href="{{ .Params.sp_website }}" class="post-link">
-		<img src="/images/sponsors/{{.Params.sp_logo}}" style="padding-right: 10px; max-width: 60px; max-height: 60px;">
-		{{ .Params.short_desc }}
-		</a>
-		<div class="post-time">{{ .Date.Format "Jan 2, 2006" }}</div>
-		</div>
+		{{ partial "sponsor.html" . }}
 	{{ end }}
-	<!-- </ul> -->
 {{ end }}
 </div>
 <br>
-{{ partial "sponsors.html" .}}
+{{ partial "sponsors-logos.html" .}}
 {{ partial "footer.html" . }}

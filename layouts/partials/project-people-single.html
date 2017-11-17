@@ -1,0 +1,26 @@
+{{ $baseUrl := .Site.BaseURL }}
+<ul  class="project-people" style="list-style: none; padding-left: 2em;">
+{{$site := .Site}}
+{{ range $person := .Params.people}}
+	<li style="padding: 2pt 2pt 2pt 2pt; display: inline-block;">
+	{{ $.Scratch.Set "found" "false"}}
+	{{ range $page := where $site.Pages "Type" "people" }}
+		{{ if (eq $person $page.Params.name) }}
+			{{ $.Scratch.Set "found" "true"}}
+			{{ if (isset $page.Params "website") | and (not (eq $page.Params.website "")) }}
+		<a class="person" href="{{$page.Params.website}}">
+			{{ end }}
+			{{ if (isset $page.Params "img") }}
+			<img src={{ printf "/images/people/%s" $page.Params.img}} style="width: 5rem; height: 5rem; object-fit: cover; border-radius: 50%;">
+			{{end}}
+			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
+		</a>
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	{{ if (eq ($.Scratch.Get "found") "false") }}
+		{{ $person }},
+	{{ end }}
+	</li>
+{{ end }}
+</ul>

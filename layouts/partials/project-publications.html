@@ -1,0 +1,14 @@
+{{ $baseUrl := .Site.BaseURL }}
+{{ $project := .Params.Title }}
+{{ $.Scratch.Set "print_section" "true"}}
+<div style="display: inline-block;">
+{{ range where .Site.Pages "Type" "publications" }}
+	{{ if (eq $project .Params.project) }}
+		{{ if (eq ($.Scratch.Get "print_section") "true") }}
+			<h5> Publications </h5>
+			{{ $.Scratch.Set "print_section" "false"}}
+		{{ end }}
+	{{ partial "pub.html" .}}
+	{{ end }}
+{{ end }}
+</div>

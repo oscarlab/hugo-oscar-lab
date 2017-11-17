@@ -16,17 +16,17 @@ image = "name of project logo in /static/images/projects/"
 <h2>Completed Projects</h2>
 	{{ end }}
 </div>
-<div class="card-block" style="max-width: 95%; margin: auto auto 20px auto;">
+<div class="grid" data-masonry='{ "itemSelector": ".card", "columnWidth": 275 }'>
 	{{ range .Pages }}
-	<div class="card link" style="display: inline-block; max-width: 275px; margin-bottom: 10px; vertical-align: top;">
+	<div class="card link" style="width: 275px; margin-bottom: 5px;">
 		{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
 		<a href="{{ .Params.website }}" style="color: black; text-decoration: none;">
 		{{ else }}
 		<a href="{{ .Permalink }}" style="color: black; text-decoration: none;">
 		{{end}}
 			<div class="card-block" style="padding: 1rem;">
-				<div class="title" style="display: table;">
-					<h3 class="card-title" style="display: table-cell; vertical-align: middle; padding-bottom: 10px;color: #4466EE;">
+				<div class="title" style="">
+					<h3 class="card-title" style=" vertical-align: middle; padding-bottom: 10px;color: #4466EE;">
 				{{ if (isset .Params "image") | and (not (eq .Params.image ""))}}
 					<img class="project-logo" src="{{ printf "/images/projects/%s" .Params.image}}" style="max-height: 2em; max-width: 2em; margin: 0em 0.5rem;">
 				{{ end }}
@@ -35,13 +35,13 @@ image = "name of project logo in /static/images/projects/"
 				</div>
 				<div class="card-text" style="text-align: left;">
 				{{ if (isset .Params "short_desc") | and (not (eq .Params.short_desc ""))}}
-					{{ .Params.short_desc}}
+					{{ .Params.short_desc | markdownify}}
 				{{end}}
 				</div>
 			</div>
 			{{ if (isset .Params "people") | and (not (eq .Params.people ""))}}
 			<div class="card-footer" style="background-color: #4466EE; background-">
-			{{ partial "project-people.html" . }}
+			{{ partial "project-people-list.html" . }}
 			</div>
 			{{ end }}
 		</a>

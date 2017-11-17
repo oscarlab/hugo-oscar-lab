@@ -1,0 +1,23 @@
+{{ $baseUrl := .Site.BaseURL }}
+{{ $site := .Site }}
+{{ $.Scratch.Set "print_section" "true"}}
+<div>
+{{ range $sponsor := .Params.sponsors}}
+	{{ range where $site.Pages "Type" "sponsors" }}
+		{{ if (eq $sponsor .Params.title) }}
+			{{ if (eq ($.Scratch.Get "print_section") "true") }}
+				<h5> Sponsors </h5>
+				{{ $.Scratch.Set "sponsor_exists" "true" }}
+				{{ $.Scratch.Set "print_section" "false" }}
+			{{ end }}
+			{{ partial "sponsor.html" . }}
+		{{ end }}
+	{{ end }}
+{{ end }}
+</div>
+{{ if (eq ($.Scratch.Get "sponsor_exists") "true") }}
+<div class="doc-footer">
+Disclaimer: Any opinions, findings, and conclusions or recommendations expressed in this material are ours alone, and do not necessarily reflect the views of our sponsors.
+All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
+</div>
+{{ end }}
