@@ -19,10 +19,12 @@ image = "name of project logo in /static/images/projects/"
 		</header>
 		<div id="post-body" style="width: 80%; margin:auto;">
 			{{ .Content }}
-			<h5> People </h5>
-			{{ partial "project-people-single.html" . }}
-			{{ partial "project-publications.html" . }}
-			{{ partial "project-sponsors.html" . }}
+			{{ if not (eq .Params.nometadisplay "true") }}
+				<h5> People </h5>
+				{{ partial "project-people-single.html" . }}
+				{{ partial "project-publications.html" . }}
+				{{ partial "project-sponsors.html" . }}
+			{{ end }}
 		</div>
 	</div>
 </div>
