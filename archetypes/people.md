@@ -9,6 +9,7 @@ role = "1_faculty/2_phd/3_phd_alum/4_ms_student/5_ms_alum/6_undergrad_student/7_
 email = "email@university.edu"
 website = "https://externalwebsite.com"
 first_job = ""
+current_job = ""
 +++
 
 <!-- You can add some text here using markdown or pure HTML (any markdown inside a html tag will not be parsed, however.) The markdown parser used is called blackfriday. -->
