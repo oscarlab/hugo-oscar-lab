@@ -12,6 +12,7 @@
 			{{ end }}
 			{{ if (isset $page.Params "img") }}
 			<img src={{ printf "/images/people/%s" $page.Params.img}} style="width: 5rem; height: 5rem; object-fit: cover; border-radius: 50%;" title="{{ $person }}">
+				{{ $person }},
 			{{end}}
 			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
 		</a>
