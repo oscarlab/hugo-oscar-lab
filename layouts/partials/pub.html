@@ -8,7 +8,7 @@
 </div>
 <div class="file">
 	{{ if (isset .Params "conf_link") | and (not (eq .Params.conf_link "")) }}
-	<a href="{{.Params.conf_link}}"><i class="fa fa-globe"></i></a>
+	<a href="{{.Params.conf_link}}"><i class="fa fa-globe-americas"></i></a>
 	{{ end }}
 	{{ if (isset .Params "file") | and (not (eq .Params.file "")) }}
 	<a href="/papers/{{ .Params.file }}"><i class="fa fa-file-pdf-o"></i></a>
