@@ -8,7 +8,7 @@
 			{{ if isset .Params "icon" | and (not (eq .Params.icon "")) }}
 		<div class="icon"><i class="fa fa-{{.Params.icon}}"></i></div>
 			{{ else }}
-		<div class="icon"><i class="fa fa-file-text-o"></i></div>
+		<div class="icon"><i class="fa fa-file-alt"></i></div>
 			{{ end }}
 		<a href="{{ .Permalink }}" class="post-link">
 		{{ .Params.short_desc }}
