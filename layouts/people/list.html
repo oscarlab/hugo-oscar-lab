@@ -4,7 +4,16 @@
 <!-- <h1>People</h1> -->
 <div>
 {{range .Data.Pages.GroupByParam "role" }}
-<div class="row" style="max-width: 95%; margin: auto;">
+	{{ if (eq .Key "5_phd_alum") }}
+<br>
+	{{end}}
+	{{ if (eq .Key "1_2_staff") }}
+<div class="row" style="max-width: 95%; margin: auto; display: inline-block; padding-left: 20px;">
+	{{ else if (eq .Key "4_undergrad_student") }}
+<div class="row" style="max-width: 95%; margin: auto; display: inline-block; padding-left: 20px;">
+	{{ else }}
+<div class="row" style="max-width: 95%; margin: auto; display: inline-block;">
+	{{end}}
 	<!-- {{range .Pages.GroupByParam "role"}} -->
 	{{ partial "roles.html" . }}
 	<ul class="people" style="list-style: none;">
