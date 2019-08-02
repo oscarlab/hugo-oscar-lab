@@ -16,6 +16,20 @@
 		{{ end }}
 	{{ end }}
 	{{ if (eq ($.Scratch.Get "found") "false") }}
+		{{ range $.Site.Data.people }}
+			{{ if (eq $person .name) }}
+				{{ $.Scratch.Set "found" "true"}}
+				{{ if (not (eq .website "")) }}
+			<a href="{{.website}}" style=" font-weight: normal; color: $dark-gray; position: relative; text-align: center;vertical-align: top;">
+				{{ end }}
+				{{ $person }},
+				{{ if (not (eq .website "")) }}
+			</a>
+				{{ end }}
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	{{ if (eq ($.Scratch.Get "found") "false") }}
 		{{ $person }},
 	{{ end }}
 	</div>
