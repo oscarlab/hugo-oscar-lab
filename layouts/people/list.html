@@ -30,12 +30,15 @@
 			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
 			</a>
 			{{ end }}
-			<div style="font-size: 9pt;text-align:center; color: #8a8a8a; margin-top: -8px; line-height: 1.2">
-			{{ if (isset .Params "first_job") | and (not (eq .Params.first_job "")) }}
-			First Job: {{ .Params.first_job }}</div>
-			{{ end }}
 			{{ if (isset .Params "current_job") | and (not (eq .Params.current_job "")) }}
+			<div style="font-size: 9pt;text-align:center; color: #8a8a8a; line-height: 1.2">
 			Current Job : {{.Params.current_job}}
+			</div>
+			{{ end }}
+			{{ if (isset .Params "first_job") | and (not (eq .Params.first_job "")) }}
+			<div style="font-size: 9pt;text-align:center; color: #8a8a8a; margin-top: 5px;  line-height: 1.2">
+			First Job: {{ .Params.first_job }}
+			</div>
 			{{ end }}
 		</li>
 		{{ end }}
