@@ -22,7 +22,7 @@
                 <ul class="nav">
                     <!-- <ul class="nav navbar-nav"> -->
                     <li {{ if .IsHome }}class="active"{{ end }}><a href="{{ $baseUrl }}/">Home</a></li>
-                    {{ $url := .URL }}
+                    {{ $url := .Permalink }}
                     {{ with .Site.Menus.main }}
                     {{ range $menu := . }}
                     <li {{ if eq $url .URL }}class="active"{{ end }}><a href="{{ .URL }}">{{ .Name }} </a></li>
