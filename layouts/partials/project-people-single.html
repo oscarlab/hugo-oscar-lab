@@ -1,7 +1,7 @@
 {{ $baseUrl := .Site.BaseURL }}
 <ul  class="project-people" style="list-style: none; padding-left: 2em;">
 {{$site := .Site}}
-{{ range $person := .Params.people}}
+{{ range $person := sort .Params.people}}
 	<li style="padding: 2pt 2pt 2pt 2pt; display: inline-block;">
 	{{ $.Scratch.Set "found" "false"}}
 	{{ range $page := where $site.Pages "Type" "people" }}

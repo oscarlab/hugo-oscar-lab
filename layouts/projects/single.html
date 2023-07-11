@@ -12,13 +12,11 @@ image = "name of project logo in /static/images/projects/"
 	<div class="post">
 		<header>
 			<center>
-			{{ if eq .Content "" }}
 			<h2>{{ .Params.name }}</h2>
-			{{ end }}
 			</center>
 		</header>
 		<div id="post-body" style="width: 80%; margin:auto;">
-			{{ .Content }}
+		  {{ .Content }}
 			{{ if not (eq .Params.nometadisplay "true") }}
 				<h5> People </h5>
 				{{ partial "project-people-single.html" . }}
