@@ -3,13 +3,12 @@
 
 <!-- <h1>People</h1> -->
 <div>
-{{range .Data.Pages.GroupByParam "role" }}
-	{{ if (eq .Key "5_phd_alum") }}
+  {{range .Data.Pages.GroupByParam "role" }}
+  {{ $role := .Key }}
+	{{ if (eq $role "5_phd_alum") }}
 <br>
 	{{end}}
-	{{ if (eq .Key "1_2_staff") }}
-<div class="row" style="max-width: 95%; margin: auto; display: inline-block; padding-left: 20px;">
-	{{ else if (eq .Key "4_undergrad_student") }}
+	{{ if (eq $role "1_2_staff") }}
 <div class="row" style="max-width: 95%; margin: auto; display: inline-block; padding-left: 20px;">
 	{{ else }}
 <div class="row" style="max-width: 95%; margin: auto; display: inline-block;">
@@ -19,7 +18,13 @@
 	<ul class="people" style="list-style: none;">
 	{{ range sort .Pages ".Params.name" "" }}
 		{{if (isset .Params "name") | and (not (eq .Params.name ""))}}
-		<li style="float: left; display: inline; padding: 8px; text-align: center; width: 170px; min-height: 214px;">
+	                {{ if (eq $role "5_phd_alum") }}
+	                    <li style="float: left; display: inline; padding: 8px; text-align: center; width: 170px; min-height: 290px;">
+			    {{ else }}
+	                    <li style="float: left; display: inline;
+			      padding: 8px; text-align: center; width:
+			      170px; min-height: 230px;">
+			    {{end}}			      
 			{{ if (isset .Params "website") | and (not (eq .Params.website "")) }}
 			<a href="{{.Params.website}}">
 			{{ end }}
